@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Keat </title>
+
+        <style>
+            .center 
+            {
+                margin: auto;
+                width: 50%;
+                border: 3px solid green;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        </script>
+        <script>
+        $(document).ready(function()
+            {
+                $("input").change(function()
+                    {
+                        var ekp = $("#Buy").val();
+                        var vkp = $("#Sell").val();
+                        var cT = $("#turAmount").val();
+
+                        var erg = vkp;
+                        $("#Earnings").text(erg);
+
+                        erg = vkp * cT;
+                        $("#gEarnings").text(erg);
+
+                        erg = ekp;
+                        $("#sBells").text(erg);
+
+                        erg = ekp * cT;
+                        $("#gsBells").text(erg);
+
+                        erg = vkp -ekp;
+                        $("#Profit").text(erg);
+
+                        erg = erg * cT;
+                        $("#gProfit").text(erg);
+                    }
+                );
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div class="center">
+            Buy price <input type="number" id=Buy value="90">
+            <br><br>
+            Sell price <input type="number" id=Sell value="100">
+            <br><br>
+            Amount <input type="number" id=turAmount value="1">
+        </div>
+            <br>
+                <table class="center">
+                    <tr>
+                        <td></td>
+                        <td>per Turnip</td>
+                        <td>Sum</td>
+                    </tr>
+                    <tr>
+                        <td><p> Earnings:</p></td>
+                        <td><p id= Earnings></p></td>
+                        <td><p id= gEarnings></p></td>
+                    </tr>
+                    <tr>
+                        <td><p> Spent:</p></td>
+                        <td><p id= sBells></p></td>
+                        <td><p id= gsBells></p></td>
+                    </tr>
+                    <tr>
+                        <td><p> Profit:</p></td>
+                        <td><p id= Profit></p></td>
+                        <td><p id= gProfit></p></td>
+                    </tr>
+                </table>
+    </body>
+</html>
